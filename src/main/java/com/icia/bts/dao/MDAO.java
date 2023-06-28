@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.icia.bts.dto.MEMBER;
 import com.icia.bts.dto.PAGING;
 import com.icia.bts.dto.SEARCH;
+import com.icia.bts.dto.TEST;
 
 @Repository
 public class MDAO {
@@ -51,6 +52,10 @@ public class MDAO {
 
 	public void mDelete(MEMBER member) {
 		sql.delete("Member.mDelete", member);
+	}
+
+	public List<TEST> joinTest(MEMBER member) {
+		return sql.selectList("Member.joinTest", member);
 	}
 
 

@@ -181,6 +181,8 @@
 										data-bs-target="#largeModal">로그인 모달</button>
 									<button type="button" id="blist"
 										class="btn btn-dark rounded-pill">게시글목록</button>
+										<button type="button" id="test"
+										class="btn btn-primary rounded-pill">조인 테스트</button>
 								</c:otherwise>
 
 
@@ -319,6 +321,10 @@
 
 		$('#blist').click(function() {
 			location.href = "bList";
+		});
+		
+		$('#test').click(function() {
+			location.href = "joinTest";
 		});
 	</script>
 

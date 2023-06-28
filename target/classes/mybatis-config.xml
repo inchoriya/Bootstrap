@@ -10,6 +10,7 @@
 		<typeAlias type="com.icia.bts.dto.COMMENT"	alias="comment"/>
 		<typeAlias type="com.icia.bts.dto.PAGING"	alias="paging" />
 		<typeAlias type="com.icia.bts.dto.SEARCH"	alias="search" />
+		<typeAlias type="com.icia.bts.dto.TEST"		alias="test" />
 	</typeAliases>
 
 </configuration>

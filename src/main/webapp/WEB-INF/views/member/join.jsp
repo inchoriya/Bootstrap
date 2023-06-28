@@ -406,7 +406,6 @@
 					check2.css("color", "blue");
 					check22 = true;
 				}
-
 			});
 
 			$('#checkPw').keyup(function () {

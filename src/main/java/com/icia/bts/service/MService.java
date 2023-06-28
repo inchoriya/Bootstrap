@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.List;
 import java.util.UUID;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -18,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.icia.bts.dao.MDAO;
 import com.icia.bts.dto.MEMBER;
 import com.icia.bts.dto.SEARCH;
+import com.icia.bts.dto.TEST;
 
 @Service
 public class MService {
@@ -223,6 +223,20 @@ public class MService {
 			e.printStackTrace();
 			mav.setViewName("redirect:/mView?mId=" + member.getMId());
 		}
+		return mav;
+	}
+
+	public ModelAndView joinTest() {
+		mav = new ModelAndView();
+		
+		MEMBER member = new MEMBER();
+		member.setMId("ICIA123");
+		
+		List<TEST> tList = mdao.joinTest(member);
+		
+		mav.setViewName("index");
+		mav.addObject("tList", tList);
+		System.out.println("mav : " + mav);
 		return mav;
 	}
 

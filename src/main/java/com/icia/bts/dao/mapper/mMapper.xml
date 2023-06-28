@@ -47,5 +47,12 @@
 		DELETE FROM MEMBERT WHERE MID = #{mId}
 	</delete>
 	
+	<!-- joinTest -->
+	<select id="joinTest" parameterType="member" resultType="test">
+		SELECT * 
+		FROM BOARDT B, MEMBERT M 
+		WHERE B.BWRITER = M.MID AND M.MID = #{mId}
+	</select>
+	
 </mapper>
 	

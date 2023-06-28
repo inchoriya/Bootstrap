@@ -22,8 +22,13 @@ public class HController {
 	public String index() {
 		return "index";
 	}
-
 	
+		
+	// jythonTest : 자이썬 테스트
+	@RequestMapping(value = "/jythonTest", method = RequestMethod.GET)
+	public String jythonTest() {
+		return "index";
+	}
 
 
 }

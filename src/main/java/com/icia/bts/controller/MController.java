@@ -69,12 +69,12 @@ public class MController {
 			HttpServletRequest request, HttpServletResponse response) {
 		return msvc.mLogin(member, remember, request, response);
 	}
-	
+
 	// logout : 로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request) {
 		session.invalidate();
-		
+
 //		Cookie[] cookies = request.getCookies();
 //
 //		for (Cookie cookie : cookies) {
@@ -88,8 +88,7 @@ public class MController {
 //				
 //			}
 //		}
-		
-		
+
 		return "index";
 	}
 
@@ -98,55 +97,52 @@ public class MController {
 	public ModelAndView mList() {
 		return msvc.mList();
 	}
-	
+
 	// mSearch : 검색목록
 	@RequestMapping(value = "/mSearch", method = RequestMethod.GET)
 	public ModelAndView mSearch(@ModelAttribute SEARCH search) {
 		return msvc.mSearch(search);
 	}
-	
+
 	// mView : 회원상세보기
 	@RequestMapping(value = "/mView", method = RequestMethod.GET)
-	public ModelAndView mView(@RequestParam("mId")String mId){
-		
-		if(mId.equals(null) || mId.equals("")) {
+	public ModelAndView mView(@RequestParam("mId") String mId) {
+
+		if (mId.equals(null) || mId.equals("")) {
 			mId = "icia";
 		}
-		
+
 		return msvc.mView(mId);
 	}
-	
+
 	// mModify : 회원수정
 	@RequestMapping(value = "/mModify", method = RequestMethod.POST)
 	public ModelAndView mModify(@ModelAttribute MEMBER member, HttpServletRequest request) {
 		return msvc.mModify(member, request);
 	}
-	
+
 	// checkPw : 비밀번호 변경을 위한 현재 비밀번호 확인
 	@RequestMapping(value = "/checkPw", method = RequestMethod.POST)
 	public @ResponseBody String checkPw(@ModelAttribute MEMBER member) {
 		return msvc.checkPw(member);
 	}
-	
+
 	// changePw : 비밀번호 변경
 	@RequestMapping(value = "/changePw", method = RequestMethod.POST)
 	public ModelAndView changePw(@ModelAttribute MEMBER member) {
 		return msvc.changePw(member);
 	}
-	
+
 	// mDelete : 회원탈퇴
 	@RequestMapping(value = "/mDelete", method = RequestMethod.GET)
 	public ModelAndView mDelete(@ModelAttribute MEMBER member, HttpServletRequest request) {
 		return msvc.mDelete(member, request);
 	}
-	
+
+	// joinTest
+	@RequestMapping(value = "/joinTest", method = RequestMethod.GET)
+	public ModelAndView joinTest() {
+		return msvc.joinTest();
+	}
+
 }
-
-
-
-
-
-
-
-
-
